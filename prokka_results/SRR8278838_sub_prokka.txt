@@ -1,0 +1,7 @@
+organism: Helicobacter pylori strain 
+contigs: 2
+bases: 1590620
+CDS: 1672
+rRNA: 4
+tRNA: 36
+tmRNA: 1

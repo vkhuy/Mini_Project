@@ -1,0 +1,7 @@
+kraken2/
+reads/
+reads_qc/
+read_subsets/
+trycycler/
+assemblies/
+.DS_Store

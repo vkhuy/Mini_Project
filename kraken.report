@@ -1,0 +1,10 @@
+100.00	2	0	R	1	root
+100.00	2	0	R1	131567	  cellular organisms
+100.00	2	0	D	2	    Bacteria
+100.00	2	0	P	29547	      Campylobacterota
+100.00	2	0	C	3031852	        Epsilonproteobacteria
+100.00	2	0	O	213849	          Campylobacterales
+100.00	2	0	F	72293	            Helicobacteraceae
+100.00	2	0	G	209	              Helicobacter
+100.00	2	1	S	210	                Helicobacter pylori
+ 50.00	1	1	S1	1055530	                  Helicobacter pylori SNT49
