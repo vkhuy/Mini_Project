@@ -1,0 +1,17 @@
+name: fastqc
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - expat=2.5.0=hf0c8a7f_1
+  - fastqc=0.12.1=hdfd78af_0
+  - font-ttf-dejavu-sans-mono=2.37=hab24e00_0
+  - fontconfig=2.14.2=h5bb23bf_0
+  - freetype=2.12.1=h3f81eb7_1
+  - libcxx=16.0.6=hd57cbcb_0
+  - libexpat=2.5.0=hf0c8a7f_1
+  - libpng=1.6.39=ha978bb4_0
+  - libzlib=1.2.13=h8a1eda9_5
+  - openjdk=20.0.0=h7d26f99_0
+  - perl=5.32.1=3_h0dc2134_perl5
+prefix: /Users/huy/mambaforge-pypy3/envs/fastqc

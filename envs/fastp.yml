@@ -1,0 +1,10 @@
+name: fastp
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp=0.23.4=h5712c04_2
+  - isa-l=2.30.0=h0d85af4_4
+  - libcxx=16.0.6=hd57cbcb_0
+  - libdeflate=1.18=hac1461d_0
+prefix: /Users/huy/mambaforge-pypy3/envs/fastp

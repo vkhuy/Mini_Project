@@ -1,0 +1,10 @@
+name: filtlong
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - filtlong=0.2.1=hdf58011_3
+  - libcxx=16.0.6=hd57cbcb_0
+  - libzlib=1.2.13=h8a1eda9_5
+  - zlib=1.2.13=h8a1eda9_5
+prefix: /Users/huy/mambaforge-pypy3/envs/filtlong

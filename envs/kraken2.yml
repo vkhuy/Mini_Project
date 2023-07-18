@@ -1,0 +1,53 @@
+name: kraken2
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - blast=2.14.0=pl5321h91c44f7_2
+  - bzip2=1.0.8=h0d85af4_4
+  - c-ares=1.19.1=h0dc2134_0
+  - ca-certificates=2023.5.7=h8857fd0_0
+  - curl=8.1.2=hbee3ae8_0
+  - entrez-direct=16.2=h193322a_1
+  - gettext=0.21.1=h8a4c099_0
+  - kraken2=2.1.3=pl5321hf7ba07b_0
+  - krb5=1.20.1=h049b76e_0
+  - libcurl=8.1.2=hbee3ae8_0
+  - libcxx=16.0.6=hd57cbcb_0
+  - libedit=3.1.20191231=h0678c8f_2
+  - libev=4.33=haf1e3a3_1
+  - libiconv=1.17=hac89ed1_0
+  - libidn2=2.3.4=hb7f2c08_0
+  - libnghttp2=1.52.0=he2ab024_0
+  - libssh2=1.11.0=hd019ec5_0
+  - libunistring=0.9.10=h0d85af4_0
+  - libzlib=1.2.13=h8a1eda9_5
+  - llvm-openmp=16.0.6=hff08bdf_0
+  - ncbi-vdb=3.0.0=pl5321h9722bc1_0
+  - ncurses=6.4=hf0c8a7f_0
+  - openssl=3.1.1=h8a1eda9_1
+  - pcre=8.45=he49afe7_0
+  - perl=5.32.1=3_h0dc2134_perl5
+  - perl-archive-tar=2.40=pl5321hdfd78af_0
+  - perl-carp=1.38=pl5321hdfd78af_4
+  - perl-common-sense=3.75=pl5321hdfd78af_0
+  - perl-compress-raw-bzip2=2.201=pl5321h9722bc1_0
+  - perl-compress-raw-zlib=2.105=pl5321h9722bc1_0
+  - perl-encode=3.19=pl5321ha5712d3_1
+  - perl-exporter=5.72=pl5321hdfd78af_2
+  - perl-exporter-tiny=1.002002=pl5321hdfd78af_0
+  - perl-extutils-makemaker=7.70=pl5321hd8ed1ab_0
+  - perl-io-compress=2.201=pl5321h7133b54_2
+  - perl-io-zlib=1.14=pl5321hdfd78af_0
+  - perl-json=4.10=pl5321hdfd78af_0
+  - perl-json-xs=2.34=pl5321hcd10b59_5
+  - perl-list-moreutils=0.430=pl5321hdfd78af_0
+  - perl-list-moreutils-xs=0.430=pl5321ha5712d3_1
+  - perl-parent=0.236=pl5321hdfd78af_2
+  - perl-pathtools=3.75=pl5321ha5712d3_3
+  - perl-scalar-list-utils=1.62=pl5321ha5712d3_0
+  - perl-types-serialiser=1.01=pl5321hdfd78af_0
+  - wget=1.20.3=hd3787cc_1
+  - zlib=1.2.13=h8a1eda9_5
+  - zstd=1.5.2=h829000d_7
+prefix: /Users/huy/mambaforge-pypy3/envs/kraken2
