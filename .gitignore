@@ -11,4 +11,7 @@ Helicobacter pylori bvbrc.embl
 Helicobacter pylori hp2.xls
 full_script.sh
 1.debai/
+compare_assemblies.py
+busco/
+busco_downloads/
 

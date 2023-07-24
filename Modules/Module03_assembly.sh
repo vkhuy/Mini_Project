@@ -30,6 +30,9 @@ done
 # Trycycler step 3: clustering contigs
 mamba run -n trycycler trycycler cluster --assemblies assemblies/*.fasta --reads reads_qc/SRR8278838_sub.fastq.gz --out_dir trycycler --distance 0.02
 
+# Visualize clusters tree and found that cluster_003 was bad
+java -jar figtree.jar -graphic PNG trycycler/contigs.newick trycycler/clusters.png
+
 # Remove bad clusters
 mv trycycler/cluster_003 trycycler/bad_cluster_003
 
