@@ -13,24 +13,24 @@ filename2="${filename2%.*.*}"
 filename3=$(basename -- "$input3")
 filename3="${filename3%.*.*}"
 
-### Module01:
+### Setup environment:
 # Import environment
-bash Modules/Module01_import_environment.sh
+bash Modules/setup_environment.sh
 
-### Module02:
+### Module01:
 # Quality Control 
 mkdir reads_qc
-bash Modules/Module02_quality_control.sh $input1 $input2 $input3
+bash Modules/Module01_quality_control.sh $input1 $input2 $input3
 
-### Module03:
+### Module02:
 # Assembly with trycycler
-bash Modules/Module03_assembly.sh $input1 $input2 $input3
+bash Modules/Module02_assembly.sh $input1 $input2 $input3
 # Merge together
 cat trycycler/cluster_*/7_final_consensus.fasta > trycycler.fasta
 
-### Module04:
+### Module03:
 # Long_reads polishing with medaka
-bash Modules/Module04_long_read_polishing.sh
+bash Modules/Module03_long_read_polishing.sh
 # Clean up
 mv trycycler/cluster_001/medaka/consensus.fasta trycycler/cluster_001/8_medaka.fasta
 rm -r trycycler/cluster_001/medaka trycycler/cluster_001/*.fai trycycler/cluster_001/*.mmi
@@ -39,9 +39,9 @@ rm -r trycycler/cluster_002/medaka trycycler/cluster_002/*.fai trycycler/cluster
 # Merge together
 cat trycycler/cluster_*/8_medaka.fasta > trycycler_medaka.fasta
 
-### Module05:
+### Module04:
 # Short_reads polishing with polypolish
-bash Modules/Module05_short_read_polishing.sh $input1 $input2 
+bash Modules/Module04_short_read_polishing.sh $input1 $input2 
 rm *.bwt *.pac *.ann *.amb *.sa *.sam
 
 # Move all assembled genomes to assembled folder
@@ -51,14 +51,14 @@ mv trycycler_medaka.fasta assembled/trycycler_medaka.fasta
 mv trycycler_medaka_polypolish.fasta assembled/trycycler_medaka_polypolish.fasta
 echo "Assembly: Done"
 
-### Module06:
+### Module05:
 Taxonomic classification with kraken2
 mkdir kraken2
-bash Modules/Module06_taxonomic_classification.sh $input3
+bash Modules/Module05_taxonomic_classification.sh $input3
 
-## Module07:
+## Module06:
 # Annotation with prokka
-bash Modules/Module07_Annotation.sh
+bash Modules/Module06_Annotation.sh
 
 
 echo "Pipeline is finished"
