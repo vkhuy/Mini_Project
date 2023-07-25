@@ -13,7 +13,7 @@ git clone https://github.com/vkhuy/Mini_Project.git
 cd Mini_project
 
 # Setup and installation - this may take some time
-sh setup_environments.sh
+bash setup_environments.sh
 ```
 
 ## Usage
@@ -42,7 +42,7 @@ The goal of read QC is to discard low-quality reads and/or trim off low-quality 
 
 For Illumina read QC, use [fastp](https://github.com/OpenGene/fastp) to remove adapters and trim off low-quality bases.
 
-For ONT read QC, use [Filtlong](https://github.com/rrwick/Filtlong) to remove short reads to improve N50 and throw out the worst 10% of reads. After these QC steps, you should be left with an ONT read set with a much better N50 but still plenty of depth.
+For ONT read QC, use [Filtlong](https://github.com/rrwick/Filtlong) to remove short reads to improve N50 and throw out the worst 10% of reads. After these QC steps, you should be left with an ONT read set with a much better N50 but still plenty of depth. Then it will visiualize ONT read QC with [FastQC](https://github.com/s-andrews/FastQC).
 
 ### 2. Assembly 
 
@@ -56,7 +56,7 @@ In brief, Trycycler does the following:
 - Constructs a consensus sequence from the MSA by choosing between variants where the sequences differ.
 
 There are 6 steps to assembly:
-- [Generating assemblies](https://github.com/rrwick/Trycycler/wiki/Generating-assemblies): In this step, there are 3 assemblers: [Flye](https://github.com/fenderglass/Flye), [Miniasm+Minipolish](https://github.com/rrwick/Minipolish),[Raven] (https://github.com/lbcb-sci/raven).
+- [Generating assemblies](https://github.com/rrwick/Trycycler/wiki/Generating-assemblies): In this step, there are 3 assemblers: [Flye](https://github.com/fenderglass/Flye), [Miniasm+Minipolish](https://github.com/rrwick/Minipolish),[Raven](https://github.com/lbcb-sci/raven).
 - [Clustering contigs](https://github.com/rrwick/Trycycler/wiki/Clustering-contigs)
 - [Reconciling contigs](https://github.com/rrwick/Trycycler/wiki/Reconciling-contigs)
 - [Multiple sequence alignment](https://github.com/rrwick/Trycycler/wiki/Multiple-sequence-alignment)
