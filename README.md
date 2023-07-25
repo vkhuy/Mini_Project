@@ -5,7 +5,7 @@ This repository is a bioinformatics analysis for microbial genome assembly, anno
 
 ## Installation and setup
 
-Because there are many dependencies to install across all of the different analytical tools the first time you run the tool it can take some time to install everything via conda. Because of this I have added a script to install environments for the six modules `setup_environment.sh`
+Because there are many dependencies to install across all of the different analytical tools the first time you run the tool it can take some time to install everything via conda. Because of this I have added a script to install environments for the six modules `setup_environment.sh`.
 
 ```
 # Clone the git repository and enter it
@@ -56,7 +56,7 @@ In brief, Trycycler does the following:
 - Constructs a consensus sequence from the MSA by choosing between variants where the sequences differ.
 
 There are 6 steps to assembly:
-- [Generating assemblies](https://github.com/rrwick/Trycycler/wiki/Generating-assemblies): In this step, there are 3 assemblers: [Flye](https://github.com/fenderglass/Flye), [Miniasm+Minipolish](https://github.com/rrwick/Minipolish),[Raven](https://github.com/lbcb-sci/raven).
+- [Generating assemblies](https://github.com/rrwick/Trycycler/wiki/Generating-assemblies): In this step, there are 3 assemblers: [Flye](https://github.com/fenderglass/Flye), [Miniasm+Minipolish](https://github.com/rrwick/Minipolish), [Raven](https://github.com/lbcb-sci/raven).
 - [Clustering contigs](https://github.com/rrwick/Trycycler/wiki/Clustering-contigs)
 - [Reconciling contigs](https://github.com/rrwick/Trycycler/wiki/Reconciling-contigs)
 - [Multiple sequence alignment](https://github.com/rrwick/Trycycler/wiki/Multiple-sequence-alignment)
@@ -79,7 +79,7 @@ flye --nano-hq read_subsets/sample_"$sample".fastq --threads "$threads" --out-di
 
 The goal of short-read polishing is to fix these small-scale errors using Illumina reads. [Polypolish](https://github.com/rrwick/Polypolish) is a very safe polisher to do it.
 
-First, align Illumina reads (separately for the `_1` and `_2` files) to your assembly using the all-alignments-per-read option. Then, polypolish will polish it with alignments.
+First, align Illumina reads (separately for the `_1` and `_2` files) to your assembly using the all-alignments-per-read option. Then, Polypolish will fix the errors on the draft assembly.
 
 ### 5. Taxonomic classification
 
