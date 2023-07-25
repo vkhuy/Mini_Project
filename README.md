@@ -5,7 +5,7 @@ This repository is a bioinformatics analysis for microbial genome assembly, anno
 
 ## Installation and setup
 
-Because there are many dependencies to install across all of the different analytical tools the first time you run the tool it can take some time to install everything via conda. Because of this I have added a script to install environments for the six modules `setup_environment.sh`.
+Because there are many dependencies to install across all of the different analytical tools the first time you run the tool it can take some time to install everything via mamba. Because of this I have added a script to install environments for the six modules `setup_environment.sh`. Make sure you have install [mamba](https://mamba.readthedocs.io/en/latest/installation.html) before install environments.
 
 ```
 # Clone the git repository and enter it
