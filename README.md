@@ -46,7 +46,30 @@ For ONT read QC, use [Filtlong](https://github.com/rrwick/Filtlong) to remove sh
 
 ### 2. Assembly 
 
+In this pipeline, I recommend use [Trycycler](https://github.com/rrwick/Trycycler). Trycycler is a tool that takes as input multiple separate long-read assemblies of the same genome (e.g. from different assemblers or different read subsets) and produces a consensus long-read assembly.
 
+In brief, Trycycler does the following:
+
+- Clusters the contig sequences, so the user can distinguish complete contigs (i.e. those that correspond to an entire replicon) from spurious and/or incomplete contigs.
+- Reconciles the alternative contig sequences with each other and repairs circularisation issues.
+- Performs a multiple sequence alignment (MSA) of the alternative sequences.
+- Constructs a consensus sequence from the MSA by choosing between variants where the sequences differ.
+
+There are 6 steps to assembly:
+- [Generating assemblies](https://github.com/rrwick/Trycycler/wiki/Generating-assemblies): In this step, there are 3 assemblers: [Flye](https://github.com/fenderglass/Flye), [Miniasm+Minipolish](https://github.com/rrwick/Minipolish),[Raven] (https://github.com/lbcb-sci/raven).
+- [Clustering contigs](https://github.com/rrwick/Trycycler/wiki/Clustering-contigs)
+- [Reconciling contigs](https://github.com/rrwick/Trycycler/wiki/Reconciling-contigs)
+- [Multiple sequence alignment](https://github.com/rrwick/Trycycler/wiki/Multiple-sequence-alignment)
+- [Partitioning reads](https://github.com/rrwick/Trycycler/wiki/Partitioning-reads)
+- [Generating a consensus](https://github.com/rrwick/Trycycler/wiki/Generating-a-consensus)
+
+For these commands to complete, it may be necessary to delete or repair some of the assembly/cluster sequences by manually inspect. If you have a different sample of my sample, you should read the step 1, 2, 3 above to fix it.
+
+Sometime, [Flye assembly produces differentiating output on the same input](https://github.com/fenderglass/Flye/issues/509). It is normal, just do assembly with Flye again, you will have the same output like me.
+
+```
+flye --nano-hq read_subsets/sample_"$sample".fastq --threads "$threads" --out-dir assembly_"$sample" && cp assembly_"$sample"/assembly.fasta assemblies/assembly_"$sample".fasta && cp assembly_"$sample"/assembly_graph.gfa assemblies/assembly_"$sample".gfa && rm -r assembly_"$sample"
+```
 
 ### 3. Long read polishing
 
@@ -56,7 +79,7 @@ For ONT read QC, use [Filtlong](https://github.com/rrwick/Filtlong) to remove sh
 
 The goal of short-read polishing is to fix these small-scale errors using Illumina reads. [Polypolish](https://github.com/rrwick/Polypolish) is a very safe polisher to do it.
 
-First, align Illumina reads (separately for the `_1 ` and `_2 ` files) to your assembly using the all-alignments-per-read option. Then, polypolish will polish it with alignments.
+First, align Illumina reads (separately for the `_1` and `_2` files) to your assembly using the all-alignments-per-read option. Then, polypolish will polish it with alignments.
 
 ### 5. Taxonomic classification
 
@@ -64,7 +87,7 @@ After obtaining the complete assembly sequence, the target species will be ident
 
 ### 6. Annotation
 
-The resulting bacterial assembly is furthermore annotated using [Prokka](https://github.com/tseemann/prokka)
+The resulting bacterial assembly is furthermore annotated using [Prokka](https://github.com/tseemann/prokka).
 
 ## Output directory structure and file naming
 
