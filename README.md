@@ -25,6 +25,8 @@ bash script.sh input_file1.fastq.gz input_file2.fastq.gz input_file3.fastq.gz
 - `input_file1.fastq.gz` and `input_file2.fastq.gz` are Illumina paired end reads.
 - `input_file3.fastq.gz` is ONT reads.
 
+If you want to change parameters or dicrectory, please check `script.sh` or each module in `Modules` and replace it.
+
 ## Modules/Workflows
 
 This pipeline has six main modules:
